@@ -1,0 +1,22 @@
+{
+	"name": "DownloadDbankFileToBaiduYun",
+	"description": "Download dbank file to baiduYun",
+	"version": "0.1",
+	"minimum_chrome_version": "18.0.884",
+	"permissions": ["alarms",
+	"tabs",
+	"https://*/*",
+	"http://*/*"],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+    {
+      "matches": ["*://*.dbank.com/*"],      
+      "js": ["jquery.js","dbank_utils.js","content_scripts.js"],
+	  "run_at":"document_idle",
+	  "all_frames":false
+    }
+  ],
+	"manifest_version": 2
+}
